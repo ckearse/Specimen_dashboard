@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Edit specimen</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    
+    <h1>Edit Specimen: </h1>
+    <form action="/pack/<%= specimen.id %>" method="POST">
+      <label>Name: 
+        <input type="text" name="name" placeholder="Name" value="<%= specimen.name %>" ><br><br>
+      </label>
+      <label>Age:
+        <input type="number" name="age" placeholder="Age" value="<%= specimen.age %>" ><br><br>
+      </label>
+      <label>Notes:
+        <input type="text" name="notes" placeholder="Add notes here.." value="<%= specimen.notes %>" ><br><br>
+      </label>
+      <input type="submit" value="Edit Specimen">
+    </form>
+
+    <% if(messages.form_errors){ %>
+      <div> Error:
+        <% for(var error of messages.form_errors){ %>
+          <p><%= error %></p>
+        <% } %>
+      </div>
+    <% } %>
+  </body>
+</html>

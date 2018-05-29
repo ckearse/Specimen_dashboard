@@ -1,0 +1,19 @@
+{
+  "name": "specimen_dashboard_app",
+  "version": "1.0.0",
+  "description": "Mongoose app for managing specimens in animal pack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "ckearse",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.1.2"
+  }
+}

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Specimen Dashboard</title> 
+  </head>
+  <body>
+
+    <div>
+        <h1>Current specimen list for pack:</h1>
+
+        <a href="/pack/new">Add new specimen to pack!</a>
+
+        <% if(specimens){ %>
+          <% for(var specimen of specimens) { %>
+
+            <p>Name: <%= specimen.name %> <br>
+               
+               <a href="/pack/<%= specimen.id %>">Details</a>
+               <a href="/pack/edit/<%= specimen.id %>">Edit</a>
+               <a href="#" onclick="event.preventDefault();document.getElementById('delete_<%= specimen.id %>').submit();">Delete</a>
+
+               <form action="/pack/destroy/<%= specimen.id %>" method="POST"   id="delete_<%=specimen.id%>" hidden="true">
+                
+               </form>
+               
+            </p>
+
+          <% } %>
+        <% } %>
+    </div>
+
+  </body>
+</html>
